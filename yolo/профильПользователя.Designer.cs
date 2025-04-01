@@ -12,5 +12,14 @@ namespace yolo
         {
             InitializeComponent();
         }
+
+        private Button ButtonChangeProfile;
+        private Label label4;
+        private TextBox inputPasswordchange;
+        private Label label3;
+        private TextBox inputLoginchange;
+        private Label label2;
+        private TextBox inputMaillchange;
+        private Label label1;
     }
 }
