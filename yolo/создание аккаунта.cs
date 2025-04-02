@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -35,9 +33,9 @@ namespace yolo
             CheckInputFields();
         }
 
+        // Проверяет, заполнены ли все текстовые поля
         private void CheckInputFields()
         {
-            // Проверяем, заполнены ли все текстовые поля
             if (!string.IsNullOrWhiteSpace(inputMaill.Text) &&
                 !string.IsNullOrWhiteSpace(inputLogin.Text) &&
                 !string.IsNullOrWhiteSpace(inputPassword.Text))
@@ -49,7 +47,9 @@ namespace yolo
                 saveKlient.Enabled = false; // Деактивируем кнопку
             }
         }
+
         private DbHelper db = new DbHelper();
+
         private void saveKlient_Click(object sender, EventArgs e)
         {
             try
@@ -59,7 +59,7 @@ namespace yolo
                 if (existingClient != null)
                 {
                     MessageBox.Show("Клиент с таким email или логином уже существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    inputMaill.Text= "";
+                    inputMaill.Text = "";
                     inputLogin.Text = "";
                     return;
                 }

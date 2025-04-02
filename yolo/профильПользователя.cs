@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace yolo
 {
     public partial class профильПользователя : Form
     {
+        public event Action<string> ProfileUpdated;
+
         public профильПользователя(string clientMaill, string clientLogin, string clientPassword)
         {
             InitializeComponent();
@@ -19,6 +15,7 @@ namespace yolo
             SetClientLogin(clientLogin);
             SetClientPassword(clientPassword);
         }
+
         public профильПользователя()
         {
             InitializeComponent();
@@ -155,7 +152,41 @@ namespace yolo
 
         private void ButtonChangeProfile_Click(object sender, EventArgs e)
         {
-            // Обработчик события для кнопки изменения профиля
+            string newEmail = inputMaillchange.Text;
+            string newLogin = inputLoginchange.Text;
+            string newPassword = inputPasswordchange.Text;
+
+            // Обновление значений
+            SetClientMaill(newEmail);
+            SetClientLogin(newLogin);
+            SetClientPassword(newPassword);
+
+            // Сохранение изменений
+            SaveClientData(newEmail, newLogin, newPassword);
+
+            // Уведомление о том, что профиль обновлен
+            ProfileUpdated?.Invoke(newLogin);
+
+            MessageBox.Show("Профиль успешно обновлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void SaveClientData(string email, string login, string password)
+        {
+            using (var db = new DbHelper())
+            {
+                var клиент = db.Клиенты.FirstOrDefault(k => k.имя == mainForm.текущийЛогин);
+                if (клиент != null)
+                {
+                    клиент.почта = email;
+                    клиент.имя = login;
+                    клиент.пароль = password;
+                    db.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка", "Произошла ошибка при сохранении данных пользователя");
+                }
+            }
         }
 
         public void SetClientMaill(string clientMaill)

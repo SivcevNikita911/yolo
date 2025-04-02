@@ -1,24 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace yolo
 {
-    public partial class mainForm: Form
+    public partial class mainForm : Form
     {
         public static string текущийЛогин;
+
         public mainForm()
         {
             InitializeComponent();
             Helper.цветДляПереходов(label8);
             Helper.цветДляПереходов(переходКконтактам);
         }
+
+        // Устанавливает имя клиента в метку профиля
         public void SetClientProfile(string clientName)
         {
             LableпрофильКлиента.Text = clientName;
@@ -38,17 +35,32 @@ namespace yolo
         {
             using (var db = new DbHelper())
             {
-                var клиент = db.Клиенты.FirstOrDefault(k => k.имя == текущийЛогин); // текущийЛогин - переменная, хранящая логин текущего пользователя
-                if (клиент != null)
+                try
                 {
-                    профильПользователя профильПользователяInstance = new профильПользователя(клиент.почта, клиент.имя, клиент.пароль);
-                    Helper.загрузкаФормыВправо(this, профильПользователяInstance, splitContainer1);
+                    var клиент = db.Клиенты.FirstOrDefault(k => k.имя == текущийЛогин); // текущийЛогин - переменная, хранящая логин текущего пользователя
+                    if (клиент != null)
+                    {
+                        профильПользователя профильПользователяInstance = new профильПользователя(клиент.почта, клиент.имя, клиент.пароль);
+                        профильПользователяInstance.ProfileUpdated += OnProfileUpdated;
+                        Helper.загрузкаФормыВправо(this, профильПользователяInstance, splitContainer1);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ошибка", "Произошла ошибка при загрузке профиля пользователя");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Ошибка", "Произошла ошибка при загрузке профиля пользователя");
+                    MessageBox.Show($"Ошибка при загрузке профиля: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+        }
+
+        // Обновляет текущий логин и метку профиля при изменении профиля
+        private void OnProfileUpdated(string newLogin)
+        {
+            текущийЛогин = newLogin;
+            SetClientProfile(newLogin);
         }
     }
 }

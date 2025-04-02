@@ -5,7 +5,7 @@ namespace yolo
 {
     class Helper
     {
-
+        // Изменяет цвет и стиль текста метки при наведении курсора
         public static void цветДляПереходов(Label label)
         {
             label.MouseEnter += (sender, e) =>
@@ -16,10 +16,12 @@ namespace yolo
 
             label.MouseLeave += (sender, e) =>
             {
-                label.ForeColor = Color.Yellow; 
-                label.Font = new Font(label.Font, FontStyle.Regular); 
+                label.ForeColor = Color.Yellow;
+                label.Font = new Font(label.Font, FontStyle.Regular);
             };
         }
+
+        // Переход между формами
         public static void переход(Form текущая, Form следующаяФорма)
         {
             следующаяФорма.FormClosed += (s, e) =>
@@ -33,6 +35,8 @@ namespace yolo
             следующаяФорма.Show();
             текущая.Hide();
         }
+
+        // Загрузка формы в правую панель SplitContainer
         public static void загрузкаФормыВправо(Form mainForm, Form formToLoad, SplitContainer splitContainer)
         {
             // Очищаем Panel2
@@ -49,4 +53,3 @@ namespace yolo
         }
     }
 }
-
