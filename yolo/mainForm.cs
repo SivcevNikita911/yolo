@@ -12,6 +12,7 @@ namespace yolo
 {
     public partial class mainForm: Form
     {
+        public static string текущийЛогин;
         public mainForm()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace yolo
         }
         public void SetClientProfile(string clientName)
         {
-            профильКлиента.Text = clientName;
+            LableпрофильКлиента.Text = clientName;
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -33,9 +34,21 @@ namespace yolo
             Helper.переход(this, new контакты());
         }
 
-        private void профильКлиента_Click(object sender, EventArgs e)
+        private void LableпрофильКлиента_Click(object sender, EventArgs e)
         {
-            Helper.загрузкаФормыВправо(this, new профильПользователя(), splitContainer1);
+            using (var db = new DbHelper())
+            {
+                var клиент = db.Клиенты.FirstOrDefault(k => k.имя == текущийЛогин); // текущийЛогин - переменная, хранящая логин текущего пользователя
+                if (клиент != null)
+                {
+                    профильПользователя профильПользователяInstance = new профильПользователя(клиент.почта, клиент.имя, клиент.пароль);
+                    Helper.загрузкаФормыВправо(this, профильПользователяInstance, splitContainer1);
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка", "Произошла ошибка при загрузке профиля пользователя");
+                }
+            }
         }
     }
 }

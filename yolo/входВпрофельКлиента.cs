@@ -53,8 +53,9 @@ namespace завод_игрпушек
                 var клиент = db.Клиенты.FirstOrDefault(k => k.имя == inputLoginForLogin.Text && k.пароль == inputPaswordForLogin.Text);
                 if (клиент != null)
                 {
+                    mainForm.текущийЛогин = клиент.имя; // Инициализация переменной текущийЛогин
                     mainForm mainFormInstance = new mainForm();
-                    mainFormInstance.SetClientProfile(клиент.имя);
+                    mainFormInstance.SetClientProfile(клиент.имя); // Установка имени клиента в метку
                     Helper.переход(this, mainFormInstance);
                 }
                 else
@@ -63,6 +64,7 @@ namespace завод_игрпушек
                 }
             }
         }
+
 
     }
 }

@@ -10,8 +10,15 @@ using System.Windows.Forms;
 
 namespace yolo
 {
-    public partial class профильПользователя: Form
+    public partial class профильПользователя : Form
     {
+        public профильПользователя(string clientMaill, string clientLogin, string clientPassword)
+        {
+            InitializeComponent();
+            SetClientMaill(clientMaill);
+            SetClientLogin(clientLogin);
+            SetClientPassword(clientPassword);
+        }
         public профильПользователя()
         {
             InitializeComponent();
@@ -43,6 +50,7 @@ namespace yolo
             this.ButtonChangeProfile.TabIndex = 16;
             this.ButtonChangeProfile.Text = "change up";
             this.ButtonChangeProfile.UseVisualStyleBackColor = false;
+            this.ButtonChangeProfile.Click += new System.EventHandler(this.ButtonChangeProfile_Click);
             // 
             // label4
             // 
@@ -143,6 +151,26 @@ namespace yolo
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void ButtonChangeProfile_Click(object sender, EventArgs e)
+        {
+            // Обработчик события для кнопки изменения профиля
+        }
+
+        public void SetClientMaill(string clientMaill)
+        {
+            inputMaillchange.Text = clientMaill;
+        }
+
+        public void SetClientLogin(string clientLogin)
+        {
+            inputLoginchange.Text = clientLogin;
+        }
+
+        public void SetClientPassword(string clientPassword)
+        {
+            inputPasswordchange.Text = clientPassword;
         }
     }
 }

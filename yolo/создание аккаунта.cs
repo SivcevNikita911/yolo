@@ -54,18 +54,26 @@ namespace yolo
         {
             try
             {
+                // Проверяем, существует ли клиент с таким же email или логином
+                var existingClient = db.Клиенты.FirstOrDefault(k => k.почта == inputMaill.Text || k.имя == inputLogin.Text);
+                if (existingClient != null)
+                {
+                    MessageBox.Show("Клиент с таким email или логином уже существует!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    inputMaill.Text= "";
+                    inputLogin.Text = "";
+                    return;
+                }
+
                 Клиенты клиент = new Клиенты
                 {
                     почта = inputMaill.Text,
                     имя = inputLogin.Text,
-                    пароль =inputPassword.Text
+                    пароль = inputPassword.Text
                 };
                 db.Клиенты.Add(клиент);
                 db.SaveChanges(); // Сохраняем изменения в базе данных
                 MessageBox.Show("Клиент успешно сохранен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                inputLogin.Text = ""; // Очищаем текстовые поля
-                inputMaill.Text = "";
-                inputPassword.Text = "";
+                Helper.переход(this, new авторизация());
             }
             catch (Exception ex)
             {

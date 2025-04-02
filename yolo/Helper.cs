@@ -23,13 +23,13 @@ namespace yolo
         public static void переход(Form текущая, Form следующаяФорма)
         {
             следующаяФорма.FormClosed += (s, e) =>
-        {
-            if (Application.OpenForms.Count == 1) // Если больше нет открытых форм
             {
-                Application.Exit(); // Завершает приложение
-            }
-            else текущая.Close();
-        };
+                if (Application.OpenForms.Count == 1) // Если больше нет открытых форм
+                {
+                    Application.Exit(); // Завершает приложение
+                }
+                else текущая.Close();
+            };
             следующаяФорма.Show();
             текущая.Hide();
         }
@@ -41,7 +41,7 @@ namespace yolo
             // Настраиваем форму
             formToLoad.TopLevel = false;
             formToLoad.FormBorderStyle = FormBorderStyle.None;
-            formToLoad.Dock = DockStyle.Fill;
+            formToLoad.Dock = DockStyle.Fill; // Устанавливаем DockStyle.Fill
 
             // Добавляем форму в Panel2
             splitContainer.Panel2.Controls.Add(formToLoad);
