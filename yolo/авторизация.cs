@@ -23,7 +23,7 @@ namespace yolo
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            Helper.переход(this, new testForm());
+            Helper.переход(this, new входВпрофельАдминистратора());
         }
 
         private void button2_Click(object sender, System.EventArgs e)

@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="adminForm.Designer.cs">
+      <DependentUpon>adminForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="DbHelper.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="mainForm.cs">
@@ -75,12 +81,6 @@
     </Compile>
     <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="testForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="testForm.Designer.cs">
-      <DependentUpon>testForm.cs</DependentUpon>
     </Compile>
     <Compile Include="авторизация.cs">
       <SubType>Form</SubType>
@@ -90,6 +90,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Администраторы.cs" />
+    <Compile Include="входВпрофельАдминистратора.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="входВпрофельАдминистратора.Designer.cs">
+      <DependentUpon>входВпрофельАдминистратора.cs</DependentUpon>
+    </Compile>
     <Compile Include="входВпрофельКлиента.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,29 +104,29 @@
       <DependentUpon>входВпрофельКлиента.cs</DependentUpon>
     </Compile>
     <Compile Include="Клиенты.cs" />
-    <Compile Include="контакты.cs">
+    <Compile Include="клиенты\контакты.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="контакты.Designer.cs">
+    <Compile Include="клиенты\контакты.Designer.cs">
       <DependentUpon>контакты.cs</DependentUpon>
     </Compile>
-    <Compile Include="профильПользователя.cs">
+    <Compile Include="клиенты\профильПользователя.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="профильПользователя.Designer.cs">
+    <Compile Include="клиенты\профильПользователя.Designer.cs">
       <DependentUpon>профильПользователя.cs</DependentUpon>
     </Compile>
-    <Compile Include="создание аккаунта.cs">
+    <Compile Include="клиенты\создание аккаунта.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="создание аккаунта.Designer.cs">
+    <Compile Include="клиенты\создание аккаунта.Designer.cs">
       <DependentUpon>создание аккаунта.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="adminForm.resx">
+      <DependentUpon>adminForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="testForm.resx">
-      <DependentUpon>testForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="авторизация.resx">
       <DependentUpon>авторизация.cs</DependentUpon>
@@ -133,16 +140,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="входВпрофельАдминистратора.resx">
+      <DependentUpon>входВпрофельАдминистратора.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="входВпрофельКлиента.resx">
       <DependentUpon>входВпрофельКлиента.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="контакты.resx">
+    <EmbeddedResource Include="клиенты\контакты.resx">
       <DependentUpon>контакты.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="профильПользователя.resx">
+    <EmbeddedResource Include="клиенты\профильПользователя.resx">
       <DependentUpon>профильПользователя.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="создание аккаунта.resx">
+    <EmbeddedResource Include="клиенты\создание аккаунта.resx">
       <DependentUpon>создание аккаунта.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bdIgrushki.db" />

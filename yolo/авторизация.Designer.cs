@@ -33,14 +33,12 @@
             this.logInUser = new System.Windows.Forms.Button();
             this.createAccount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumPurple;
-            this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.logInUser);
             this.panel1.Controls.Add(this.createAccount);
@@ -107,16 +105,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Log in";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(389, 147);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(46, 99);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // авторизация
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -137,7 +125,6 @@
         private System.Windows.Forms.Button logInUser;
         private System.Windows.Forms.Label createAccount;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }
 
