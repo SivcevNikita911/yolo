@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label8 = new System.Windows.Forms.Label();
             this.adminПерехходКсотрудникам = new System.Windows.Forms.Button();
             this.adminПерехходКматериалам = new System.Windows.Forms.Button();
             this.adminПерехходКдоставке = new System.Windows.Forms.Button();
             this.adminПерехходКзаказам = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -57,49 +57,9 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(232)))), ((int)(((byte)(239)))));
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 266;
+            this.splitContainer1.Size = new System.Drawing.Size(896, 450);
+            this.splitContainer1.SplitterDistance = 249;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // adminПерехходКсотрудникам
-            // 
-            this.adminПерехходКсотрудникам.Font = new System.Drawing.Font("Ink Free", 14F);
-            this.adminПерехходКсотрудникам.Location = new System.Drawing.Point(18, 196);
-            this.adminПерехходКсотрудникам.Name = "adminПерехходКсотрудникам";
-            this.adminПерехходКсотрудникам.Size = new System.Drawing.Size(210, 45);
-            this.adminПерехходКсотрудникам.TabIndex = 3;
-            this.adminПерехходКсотрудникам.Text = "Сотрудники";
-            this.adminПерехходКсотрудникам.UseVisualStyleBackColor = true;
-            // 
-            // adminПерехходКматериалам
-            // 
-            this.adminПерехходКматериалам.Font = new System.Drawing.Font("Ink Free", 14F);
-            this.adminПерехходКматериалам.Location = new System.Drawing.Point(18, 145);
-            this.adminПерехходКматериалам.Name = "adminПерехходКматериалам";
-            this.adminПерехходКматериалам.Size = new System.Drawing.Size(210, 45);
-            this.adminПерехходКматериалам.TabIndex = 2;
-            this.adminПерехходКматериалам.Text = "Материалы";
-            this.adminПерехходКматериалам.UseVisualStyleBackColor = true;
-            // 
-            // adminПерехходКдоставке
-            // 
-            this.adminПерехходКдоставке.Font = new System.Drawing.Font("Ink Free", 14F);
-            this.adminПерехходКдоставке.Location = new System.Drawing.Point(18, 94);
-            this.adminПерехходКдоставке.Name = "adminПерехходКдоставке";
-            this.adminПерехходКдоставке.Size = new System.Drawing.Size(210, 45);
-            this.adminПерехходКдоставке.TabIndex = 1;
-            this.adminПерехходКдоставке.Text = "Доставка";
-            this.adminПерехходКдоставке.UseVisualStyleBackColor = true;
-            // 
-            // adminПерехходКзаказам
-            // 
-            this.adminПерехходКзаказам.Font = new System.Drawing.Font("Ink Free", 14F);
-            this.adminПерехходКзаказам.Location = new System.Drawing.Point(18, 43);
-            this.adminПерехходКзаказам.Name = "adminПерехходКзаказам";
-            this.adminПерехходКзаказам.Size = new System.Drawing.Size(210, 45);
-            this.adminПерехходКзаказам.TabIndex = 0;
-            this.adminПерехходКзаказам.Text = "Заказы";
-            this.adminПерехходКзаказам.UseVisualStyleBackColor = true;
             // 
             // label8
             // 
@@ -114,11 +74,52 @@
             this.label8.Text = "🠔";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
+            // adminПерехходКсотрудникам
+            // 
+            this.adminПерехходКсотрудникам.Font = new System.Drawing.Font("Ink Free", 14F);
+            this.adminПерехходКсотрудникам.Location = new System.Drawing.Point(12, 196);
+            this.adminПерехходКсотрудникам.Name = "adminПерехходКсотрудникам";
+            this.adminПерехходКсотрудникам.Size = new System.Drawing.Size(208, 45);
+            this.adminПерехходКсотрудникам.TabIndex = 3;
+            this.adminПерехходКсотрудникам.Text = "Сотрудники";
+            this.adminПерехходКсотрудникам.UseVisualStyleBackColor = true;
+            // 
+            // adminПерехходКматериалам
+            // 
+            this.adminПерехходКматериалам.Font = new System.Drawing.Font("Ink Free", 14F);
+            this.adminПерехходКматериалам.Location = new System.Drawing.Point(12, 145);
+            this.adminПерехходКматериалам.Name = "adminПерехходКматериалам";
+            this.adminПерехходКматериалам.Size = new System.Drawing.Size(208, 45);
+            this.adminПерехходКматериалам.TabIndex = 2;
+            this.adminПерехходКматериалам.Text = "Материалы";
+            this.adminПерехходКматериалам.UseVisualStyleBackColor = true;
+            this.adminПерехходКматериалам.Click += new System.EventHandler(this.adminПерехходКматериалам_Click);
+            // 
+            // adminПерехходКдоставке
+            // 
+            this.adminПерехходКдоставке.Font = new System.Drawing.Font("Ink Free", 14F);
+            this.adminПерехходКдоставке.Location = new System.Drawing.Point(12, 94);
+            this.adminПерехходКдоставке.Name = "adminПерехходКдоставке";
+            this.adminПерехходКдоставке.Size = new System.Drawing.Size(208, 45);
+            this.adminПерехходКдоставке.TabIndex = 1;
+            this.adminПерехходКдоставке.Text = "Доставка";
+            this.adminПерехходКдоставке.UseVisualStyleBackColor = true;
+            // 
+            // adminПерехходКзаказам
+            // 
+            this.adminПерехходКзаказам.Font = new System.Drawing.Font("Ink Free", 14F);
+            this.adminПерехходКзаказам.Location = new System.Drawing.Point(12, 43);
+            this.adminПерехходКзаказам.Name = "adminПерехходКзаказам";
+            this.adminПерехходКзаказам.Size = new System.Drawing.Size(208, 45);
+            this.adminПерехходКзаказам.TabIndex = 0;
+            this.adminПерехходКзаказам.Text = "Заказы";
+            this.adminПерехходКзаказам.UseVisualStyleBackColor = true;
+            // 
             // adminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(896, 450);
             this.Controls.Add(this.splitContainer1);
             this.Name = "adminForm";
             this.Text = "adminForm";

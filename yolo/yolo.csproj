@@ -15,6 +15,21 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -72,18 +87,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Администраторы\adminForm.cs">
+    <Compile Include="adminForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Администраторы\adminForm.Designer.cs">
+    <Compile Include="adminForm.Designer.cs">
       <DependentUpon>adminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="БД\DbHelper.cs" />
-    <Compile Include="Прочее\Helper.cs" />
-    <Compile Include="клиенты\mainForm.cs">
+    <Compile Include="БД\материалы.cs" />
+    <Compile Include="материалы.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="клиенты\mainForm.Designer.cs">
+    <Compile Include="материалы.Designer.cs">
+      <DependentUpon>материалы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Прочее\Helper.cs" />
+    <Compile Include="mainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainForm.Designer.cs">
       <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Прочее\авторизация.cs">
@@ -126,11 +148,14 @@
     <Compile Include="клиенты\создание аккаунта.Designer.cs">
       <DependentUpon>создание аккаунта.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Администраторы\adminForm.resx">
+    <EmbeddedResource Include="adminForm.resx">
       <DependentUpon>adminForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="клиенты\mainForm.resx">
+    <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="материалы.resx">
+      <DependentUpon>материалы.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Прочее\авторизация.resx">
       <DependentUpon>авторизация.cs</DependentUpon>
@@ -173,6 +198,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

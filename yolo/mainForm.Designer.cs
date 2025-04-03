@@ -96,9 +96,9 @@
             this.корзинаКлиента.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.корзинаКлиента.Font = new System.Drawing.Font("Ink Free", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.корзинаКлиента.ForeColor = System.Drawing.Color.Yellow;
-            this.корзинаКлиента.Location = new System.Drawing.Point(12, 303);
+            this.корзинаКлиента.Location = new System.Drawing.Point(3, 303);
             this.корзинаКлиента.Name = "корзинаКлиента";
-            this.корзинаКлиента.Size = new System.Drawing.Size(238, 80);
+            this.корзинаКлиента.Size = new System.Drawing.Size(247, 80);
             this.корзинаКлиента.TabIndex = 5;
             this.корзинаКлиента.Text = "Корзина";
             this.корзинаКлиента.UseVisualStyleBackColor = false;
@@ -111,9 +111,9 @@
             this.заказыКлиента.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.заказыКлиента.Font = new System.Drawing.Font("Ink Free", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.заказыКлиента.ForeColor = System.Drawing.Color.Yellow;
-            this.заказыКлиента.Location = new System.Drawing.Point(12, 217);
+            this.заказыКлиента.Location = new System.Drawing.Point(3, 217);
             this.заказыКлиента.Name = "заказыКлиента";
-            this.заказыКлиента.Size = new System.Drawing.Size(238, 80);
+            this.заказыКлиента.Size = new System.Drawing.Size(247, 80);
             this.заказыКлиента.TabIndex = 4;
             this.заказыКлиента.Text = "Заказы";
             this.заказыКлиента.UseVisualStyleBackColor = false;
@@ -126,9 +126,9 @@
             this.КаталогКлиента.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.КаталогКлиента.Font = new System.Drawing.Font("Ink Free", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.КаталогКлиента.ForeColor = System.Drawing.Color.Yellow;
-            this.КаталогКлиента.Location = new System.Drawing.Point(12, 131);
+            this.КаталогКлиента.Location = new System.Drawing.Point(3, 131);
             this.КаталогКлиента.Name = "КаталогКлиента";
-            this.КаталогКлиента.Size = new System.Drawing.Size(238, 80);
+            this.КаталогКлиента.Size = new System.Drawing.Size(247, 80);
             this.КаталогКлиента.TabIndex = 3;
             this.КаталогКлиента.Text = "Каталог";
             this.КаталогКлиента.UseVisualStyleBackColor = false;
@@ -136,12 +136,13 @@
             // LableпрофильКлиента
             // 
             this.LableпрофильКлиента.AutoSize = true;
+            this.LableпрофильКлиента.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.LableпрофильКлиента.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LableпрофильКлиента.Font = new System.Drawing.Font("Ink Free", 16.2F);
             this.LableпрофильКлиента.ForeColor = System.Drawing.Color.Crimson;
             this.LableпрофильКлиента.Location = new System.Drawing.Point(51, 9);
             this.LableпрофильКлиента.Name = "LableпрофильКлиента";
-            this.LableпрофильКлиента.Size = new System.Drawing.Size(81, 34);
+            this.LableпрофильКлиента.Size = new System.Drawing.Size(83, 36);
             this.LableпрофильКлиента.TabIndex = 0;
             this.LableпрофильКлиента.Text = "label1";
             this.LableпрофильКлиента.Click += new System.EventHandler(this.LableпрофильКлиента_Click);

@@ -20,5 +20,10 @@ namespace yolo
         {
             Helper.переход(this, new авторизация());
         }
+
+        private void adminПерехходКматериалам_Click(object sender, EventArgs e)
+        {
+            Helper.загрузкаФормыВправо(this, new материалы(), splitContainer1);
+        }
     }
 }
