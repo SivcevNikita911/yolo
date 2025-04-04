@@ -94,12 +94,19 @@
       <DependentUpon>adminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="БД\DbHelper.cs" />
+    <Compile Include="БД\каталог.cs" />
     <Compile Include="БД\материалы.cs" />
-    <Compile Include="материалы.cs">
+    <Compile Include="Администраторы\материалы.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="материалы.Designer.cs">
+    <Compile Include="Администраторы\материалы.Designer.cs">
       <DependentUpon>материалы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="каталог.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="каталог.Designer.cs">
+      <DependentUpon>каталог.cs</DependentUpon>
     </Compile>
     <Compile Include="Прочее\Helper.cs" />
     <Compile Include="mainForm.cs">
@@ -154,8 +161,11 @@
     <EmbeddedResource Include="mainForm.resx">
       <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="материалы.resx">
+    <EmbeddedResource Include="Администраторы\материалы.resx">
       <DependentUpon>материалы.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="каталог.resx">
+      <DependentUpon>каталог.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Прочее\авторизация.resx">
       <DependentUpon>авторизация.cs</DependentUpon>

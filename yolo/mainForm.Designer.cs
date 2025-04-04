@@ -132,6 +132,7 @@
             this.КаталогКлиента.TabIndex = 3;
             this.КаталогКлиента.Text = "Каталог";
             this.КаталогКлиента.UseVisualStyleBackColor = false;
+            this.КаталогКлиента.Click += new System.EventHandler(this.КаталогКлиента_Click);
             // 
             // LableпрофильКлиента
             // 

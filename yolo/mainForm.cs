@@ -62,5 +62,10 @@ namespace yolo
             текущийЛогин = newLogin;
             SetClientProfile(newLogin);
         }
+
+        private void КаталогКлиента_Click(object sender, EventArgs e)
+        {
+            Helper.загрузкаФормыВправо(this, new каталог(), splitContainer1);
+        }
     }
 }
