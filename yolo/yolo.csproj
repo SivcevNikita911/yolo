@@ -95,6 +95,7 @@
     </Compile>
     <Compile Include="БД\DbHelper.cs" />
     <Compile Include="БД\каталог.cs" />
+    <Compile Include="БД\корзина.cs" />
     <Compile Include="БД\материалы.cs" />
     <Compile Include="Администраторы\материалы.cs">
       <SubType>Form</SubType>
@@ -102,11 +103,17 @@
     <Compile Include="Администраторы\материалы.Designer.cs">
       <DependentUpon>материалы.cs</DependentUpon>
     </Compile>
-    <Compile Include="каталог.cs">
+    <Compile Include="клиенты\каталог.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="каталог.Designer.cs">
+    <Compile Include="клиенты\каталог.Designer.cs">
       <DependentUpon>каталог.cs</DependentUpon>
+    </Compile>
+    <Compile Include="корзина.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="корзина.Designer.cs">
+      <DependentUpon>корзина.cs</DependentUpon>
     </Compile>
     <Compile Include="Прочее\Helper.cs" />
     <Compile Include="mainForm.cs">
@@ -164,8 +171,11 @@
     <EmbeddedResource Include="Администраторы\материалы.resx">
       <DependentUpon>материалы.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="каталог.resx">
+    <EmbeddedResource Include="клиенты\каталог.resx">
       <DependentUpon>каталог.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="корзина.resx">
+      <DependentUpon>корзина.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Прочее\авторизация.resx">
       <DependentUpon>авторизация.cs</DependentUpon>

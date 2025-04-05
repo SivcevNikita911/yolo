@@ -49,10 +49,10 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.Violet;
+            this.splitContainer1.Panel1.Controls.Add(this.заказыКлиента);
             this.splitContainer1.Panel1.Controls.Add(this.label8);
             this.splitContainer1.Panel1.Controls.Add(this.переходКконтактам);
             this.splitContainer1.Panel1.Controls.Add(this.корзинаКлиента);
-            this.splitContainer1.Panel1.Controls.Add(this.заказыКлиента);
             this.splitContainer1.Panel1.Controls.Add(this.КаталогКлиента);
             this.splitContainer1.Panel1.Controls.Add(this.LableпрофильКлиента);
             // 
@@ -96,12 +96,13 @@
             this.корзинаКлиента.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.корзинаКлиента.Font = new System.Drawing.Font("Ink Free", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.корзинаКлиента.ForeColor = System.Drawing.Color.Yellow;
-            this.корзинаКлиента.Location = new System.Drawing.Point(3, 303);
+            this.корзинаКлиента.Location = new System.Drawing.Point(3, 217);
             this.корзинаКлиента.Name = "корзинаКлиента";
             this.корзинаКлиента.Size = new System.Drawing.Size(247, 80);
             this.корзинаКлиента.TabIndex = 5;
             this.корзинаКлиента.Text = "Корзина";
             this.корзинаКлиента.UseVisualStyleBackColor = false;
+            this.корзинаКлиента.Click += new System.EventHandler(this.корзинаКлиента_Click);
             // 
             // заказыКлиента
             // 
@@ -111,7 +112,7 @@
             this.заказыКлиента.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.заказыКлиента.Font = new System.Drawing.Font("Ink Free", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.заказыКлиента.ForeColor = System.Drawing.Color.Yellow;
-            this.заказыКлиента.Location = new System.Drawing.Point(3, 217);
+            this.заказыКлиента.Location = new System.Drawing.Point(3, 303);
             this.заказыКлиента.Name = "заказыКлиента";
             this.заказыКлиента.Size = new System.Drawing.Size(247, 80);
             this.заказыКлиента.TabIndex = 4;

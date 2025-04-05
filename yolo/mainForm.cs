@@ -7,6 +7,8 @@ namespace yolo
     public partial class mainForm : Form
     {
         public static string текущийЛогин;
+        public static int текущийКлиентId; // Статическая переменная для хранения id текущего клиента
+
 
         public mainForm()
         {
@@ -66,6 +68,11 @@ namespace yolo
         private void КаталогКлиента_Click(object sender, EventArgs e)
         {
             Helper.загрузкаФормыВправо(this, new каталог(), splitContainer1);
+        }
+
+        private void корзинаКлиента_Click(object sender, EventArgs e)
+        {
+            Helper.загрузкаФормыВправо(this, new корзина(), splitContainer1);
         }
     }
 }

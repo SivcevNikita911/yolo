@@ -64,8 +64,12 @@ namespace завод_игрпушек
                     if (клиент != null)
                     {
                         mainForm.текущийЛогин = клиент.имя; // Инициализация переменной текущийЛогин
+                        mainForm.текущийКлиентId = клиент.id; // Сохранение id клиента в глобальную переменную
+
                         mainForm mainFormInstance = new mainForm();
                         mainFormInstance.SetClientProfile(клиент.имя); // Установка имени клиента в метку
+
+                        // Переход на форму mainForm
                         Helper.переход(this, mainFormInstance);
                     }
                     else
