@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SQLite;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace yolo
@@ -15,45 +16,35 @@ namespace yolo
 
         private void ЗагрузитьКаталог()
         {
-            string connectionString = "Data Source=C:\\Users\\r2d2\\Desktop\\yolo\\yolo\\БД\\bdIgrushki.db";
-
-            using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+            using (var db = new DbHelper())
             {
-                conn.Open();
-                string query = "SELECT * FROM Каталог";
-                SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, conn);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
+                var списокКаталога = db.Каталог.ToList();
+                dataGridViewКаталог.DataSource = списокКаталога;
 
-                dataGridViewКаталог.DataSource = table;
-
-                // Автоматическое масштабирование столбцов
-                dataGridViewКаталог.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-
-                // Проверка: если уже добавлены, то не дублируем
                 if (!dataGridViewКаталог.Columns.Contains("Количество"))
                 {
-                    // Добавление столбца "Количество"
-                    DataGridViewTextBoxColumn qtyColumn = new DataGridViewTextBoxColumn();
-                    qtyColumn.Name = "Количество";
-                    qtyColumn.HeaderText = "Количество";
-                    qtyColumn.ValueType = typeof(int);
-                    qtyColumn.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    DataGridViewTextBoxColumn qtyColumn = new DataGridViewTextBoxColumn
+                    {
+                        Name = "Количество",
+                        HeaderText = "Количество",
+                        ValueType = typeof(int),
+                        DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
+                    };
                     dataGridViewКаталог.Columns.Add(qtyColumn);
                 }
 
                 if (!dataGridViewКаталог.Columns.Contains("Управление"))
                 {
-                    // Добавление столбца с кнопками + и -
-                    DataGridViewButtonColumn manageColumn = new DataGridViewButtonColumn();
-                    manageColumn.Name = "Управление";
-                    manageColumn.HeaderText = "Изменить";
-                    manageColumn.Text = "+ / -";
-                    manageColumn.UseColumnTextForButtonValue = true;
+                    DataGridViewButtonColumn manageColumn = new DataGridViewButtonColumn
+                    {
+                        Name = "Управление",
+                        HeaderText = "Изменить",
+                        Text = "+ / -",
+                        UseColumnTextForButtonValue = true
+                    };
                     dataGridViewКаталог.Columns.Add(manageColumn);
                 }
 
-                // Обработка кликов по кнопкам
                 dataGridViewКаталог.CellClick += dataGridViewКаталог_CellClick;
             }
         }
