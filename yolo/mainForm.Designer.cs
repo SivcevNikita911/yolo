@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.заказыКлиента = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.переходКконтактам = new System.Windows.Forms.Label();
             this.корзинаКлиента = new System.Windows.Forms.Button();
-            this.заказыКлиента = new System.Windows.Forms.Button();
             this.КаталогКлиента = new System.Windows.Forms.Button();
             this.LableпрофильКлиента = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -62,6 +62,22 @@
             this.splitContainer1.Size = new System.Drawing.Size(800, 450);
             this.splitContainer1.SplitterDistance = 250;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // заказыКлиента
+            // 
+            this.заказыКлиента.BackColor = System.Drawing.Color.HotPink;
+            this.заказыКлиента.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.заказыКлиента.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.заказыКлиента.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.заказыКлиента.Font = new System.Drawing.Font("Ink Free", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.заказыКлиента.ForeColor = System.Drawing.Color.Yellow;
+            this.заказыКлиента.Location = new System.Drawing.Point(3, 303);
+            this.заказыКлиента.Name = "заказыКлиента";
+            this.заказыКлиента.Size = new System.Drawing.Size(247, 80);
+            this.заказыКлиента.TabIndex = 4;
+            this.заказыКлиента.Text = "Заказы";
+            this.заказыКлиента.UseVisualStyleBackColor = false;
+            this.заказыКлиента.Click += new System.EventHandler(this.заказыКлиента_Click);
             // 
             // label8
             // 
@@ -103,21 +119,6 @@
             this.корзинаКлиента.Text = "Корзина";
             this.корзинаКлиента.UseVisualStyleBackColor = false;
             this.корзинаКлиента.Click += new System.EventHandler(this.корзинаКлиента_Click);
-            // 
-            // заказыКлиента
-            // 
-            this.заказыКлиента.BackColor = System.Drawing.Color.HotPink;
-            this.заказыКлиента.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.заказыКлиента.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.заказыКлиента.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.заказыКлиента.Font = new System.Drawing.Font("Ink Free", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.заказыКлиента.ForeColor = System.Drawing.Color.Yellow;
-            this.заказыКлиента.Location = new System.Drawing.Point(3, 303);
-            this.заказыКлиента.Name = "заказыКлиента";
-            this.заказыКлиента.Size = new System.Drawing.Size(247, 80);
-            this.заказыКлиента.TabIndex = 4;
-            this.заказыКлиента.Text = "Заказы";
-            this.заказыКлиента.UseVisualStyleBackColor = false;
             // 
             // КаталогКлиента
             // 

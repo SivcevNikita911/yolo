@@ -18,10 +18,11 @@ namespace yolo
             ОчиститьТекущиеДанные();
             using (var db = new DbHelper())
             {
-                var списокКаталога = db.Каталог.ToList();
-                ПривязатьДанныеКDataGridView(списокКаталога);
+                var Каталог = db.Каталог.ToList();
+                ПривязатьДанныеКDataGridView(Каталог);
                 ДобавитьСтолбцы();
-                СинхронизироватьСКорзиной(db, списокКаталога);
+                СинхронизироватьСКорзиной(db, Каталог);
+                dataGridViewКаталог.Columns["id"].Visible = false;
             }
         }
 
@@ -37,7 +38,6 @@ namespace yolo
 
         private void ДобавитьСтолбцы()
         {
-            AddQuantityColumn();
             AddButtonColumns();
         }
 
@@ -50,45 +50,30 @@ namespace yolo
                 foreach (var товар in списокКаталога)
                 {
                     var корзинаТовара = корзина.FirstOrDefault(c => c.товар_id == товар.id);
-                    товар.количество = корзинаТовара?.количество ?? 0;
+                    товар.количество_в_корзине = корзинаТовара?.количество ?? 0;
                 }
                 ПривязатьДанныеКDataGridView(списокКаталога);
             }
         }
 
-        private void AddQuantityColumn()
-        {
-            if (!dataGridViewКаталог.Columns.Contains("Количество"))
-            {
-                var qtyColumn = new DataGridViewTextBoxColumn
-                {
-                    Name = "Количество",
-                    HeaderText = "Количество",
-                    ValueType = typeof(int),
-                    DefaultCellStyle = { Alignment = DataGridViewContentAlignment.MiddleCenter }
-                };
-                dataGridViewКаталог.Columns.Add(qtyColumn);
-            }
-        }
-
         private void AddButtonColumns()
         {
-            if (!dataGridViewКаталог.Columns.Contains("+_Количество"))
+            if (!dataGridViewКаталог.Columns.Contains("+количество_в_корзине"))
             {
                 var plusColumn = new DataGridViewButtonColumn
                 {
-                    Name = "+_Количество",
+                    Name = "+количество_в_корзине",
                     Text = "+",
                     UseColumnTextForButtonValue = true
                 };
                 dataGridViewКаталог.Columns.Add(plusColumn);
             }
 
-            if (!dataGridViewКаталог.Columns.Contains("-_Количество"))
+            if (!dataGridViewКаталог.Columns.Contains("-количество_в_корзине"))
             {
                 var minusColumn = new DataGridViewButtonColumn
                 {
-                    Name = "-_Количество",
+                    Name = "-количество_в_корзине",
                     Text = "-",
                     UseColumnTextForButtonValue = true
                 };
@@ -103,12 +88,12 @@ namespace yolo
                 var товарId = (int)dataGridViewКаталог.Rows[e.RowIndex].Cells["id"].Value;
                 using (var db = new DbHelper())
                 {
-                    if (dataGridViewКаталог.Columns[e.ColumnIndex].Name == "+_Количество")
+                    if (dataGridViewКаталог.Columns[e.ColumnIndex].Name == "+количество_в_корзине")
                     {
                         ОбработатьКнопкуПлюс(db, e.RowIndex, товарId);
                         MessageBox.Show("товар добавлен");
                     }
-                    else if (dataGridViewКаталог.Columns[e.ColumnIndex].Name == "-_Количество")
+                    else if (dataGridViewКаталог.Columns[e.ColumnIndex].Name == "-количество_в_корзине")
                     {
                         ОбработатьКнопкуМинус(db, e.RowIndex, товарId);
                         MessageBox.Show("товар убран");
@@ -119,13 +104,13 @@ namespace yolo
 
         private void ОбработатьКнопкуПлюс(DbHelper db, int rowIndex, int товарId)
         {
-            var currentQty = (int)dataGridViewКаталог.Rows[rowIndex].Cells["Количество"].Value;
-            dataGridViewКаталог.Rows[rowIndex].Cells["Количество"].Value = currentQty + 1;
+            var currentQty = (int)dataGridViewКаталог.Rows[rowIndex].Cells["количество_в_корзине"].Value;
+            dataGridViewКаталог.Rows[rowIndex].Cells["количество_в_корзине"].Value = currentQty + 1;
 
             var товар = db.Каталог.FirstOrDefault(t => t.id == товарId);
             if (товар != null)
             {
-                товар.количество = currentQty + 1;
+                товар.количество_в_корзине = currentQty + 1;
             }
 
             var клиент = db.Клиенты.FirstOrDefault(k => k.имя == mainForm.текущийЛогин);
@@ -152,15 +137,15 @@ namespace yolo
 
         private void ОбработатьКнопкуМинус(DbHelper db, int rowIndex, int товарId)
         {
-            var currentQty = (int)dataGridViewКаталог.Rows[rowIndex].Cells["Количество"].Value;
+            var currentQty = (int)dataGridViewКаталог.Rows[rowIndex].Cells["количество_в_корзине"].Value;
             if (currentQty > 0)
             {
-                dataGridViewКаталог.Rows[rowIndex].Cells["Количество"].Value = currentQty - 1;
+                dataGridViewКаталог.Rows[rowIndex].Cells["количество_в_корзине"].Value = currentQty - 1;
 
                 var товар = db.Каталог.FirstOrDefault(t => t.id == товарId);
                 if (товар != null)
                 {
-                    товар.количество = currentQty - 1;
+                    товар.количество_в_корзине = currentQty - 1;
                 }
 
                 var клиент = db.Клиенты.FirstOrDefault(k => k.имя == mainForm.текущийЛогин);

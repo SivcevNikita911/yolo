@@ -109,10 +109,10 @@
     <Compile Include="клиенты\каталог.Designer.cs">
       <DependentUpon>каталог.cs</DependentUpon>
     </Compile>
-    <Compile Include="корзина.cs">
+    <Compile Include="клиенты\корзина.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="корзина.Designer.cs">
+    <Compile Include="клиенты\корзина.Designer.cs">
       <DependentUpon>корзина.cs</DependentUpon>
     </Compile>
     <Compile Include="Прочее\Helper.cs" />
@@ -162,6 +162,12 @@
     <Compile Include="клиенты\создание аккаунта.Designer.cs">
       <DependentUpon>создание аккаунта.cs</DependentUpon>
     </Compile>
+    <Compile Include="Сотрудники.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Сотрудники.Designer.cs">
+      <DependentUpon>Сотрудники.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="adminForm.resx">
       <DependentUpon>adminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,7 +180,7 @@
     <EmbeddedResource Include="клиенты\каталог.resx">
       <DependentUpon>каталог.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="корзина.resx">
+    <EmbeddedResource Include="клиенты\корзина.resx">
       <DependentUpon>корзина.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Прочее\авторизация.resx">
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="клиенты\создание аккаунта.resx">
       <DependentUpon>создание аккаунта.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Сотрудники.resx">
+      <DependentUpon>Сотрудники.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="БД\bdIgrushki.db" />
     <None Include="packages.config" />

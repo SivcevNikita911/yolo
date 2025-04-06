@@ -74,5 +74,10 @@ namespace yolo
         {
             Helper.загрузкаФормыВправо(this, new корзина(), splitContainer1);
         }
+
+        private void заказыКлиента_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
