@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridViewСотрудники = new System.Windows.Forms.DataGridView();
-            this.изменитьСотрудников = new System.Windows.Forms.Button();
+            this.ДобавитьСотрудников = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewСотрудники)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,15 +43,15 @@
             this.dataGridViewСотрудники.Size = new System.Drawing.Size(599, 274);
             this.dataGridViewСотрудники.TabIndex = 0;
             // 
-            // изменитьСотрудников
+            // ДобавитьСотрудников
             // 
-            this.изменитьСотрудников.Location = new System.Drawing.Point(18, 304);
-            this.изменитьСотрудников.Name = "изменитьСотрудников";
-            this.изменитьСотрудников.Size = new System.Drawing.Size(155, 53);
-            this.изменитьСотрудников.TabIndex = 1;
-            this.изменитьСотрудников.Text = "изменить";
-            this.изменитьСотрудников.UseVisualStyleBackColor = true;
-            this.изменитьСотрудников.Click += new System.EventHandler(this.изменитьСотрудников_Click);
+            this.ДобавитьСотрудников.Location = new System.Drawing.Point(18, 304);
+            this.ДобавитьСотрудников.Name = "ДобавитьСотрудников";
+            this.ДобавитьСотрудников.Size = new System.Drawing.Size(155, 53);
+            this.ДобавитьСотрудников.TabIndex = 1;
+            this.ДобавитьСотрудников.Text = "добавить";
+            this.ДобавитьСотрудников.UseVisualStyleBackColor = true;
+            this.ДобавитьСотрудников.Click += new System.EventHandler(this.изменитьСотрудников_Click);
             // 
             // Сотрудники
             // 
@@ -59,7 +59,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(232)))), ((int)(((byte)(239)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.изменитьСотрудников);
+            this.Controls.Add(this.ДобавитьСотрудников);
             this.Controls.Add(this.dataGridViewСотрудники);
             this.Name = "Сотрудники";
             this.Text = "Сотрудники";
@@ -71,6 +71,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewСотрудники;
-        private System.Windows.Forms.Button изменитьСотрудников;
+        private System.Windows.Forms.Button ДобавитьСотрудников;
     }
 }

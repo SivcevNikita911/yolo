@@ -21,8 +21,15 @@ namespace yolo
         {
             using (var db = new DbHelper())
             {
-                var списокСотрудников = db.Каталог.ToList();//исправь
-                dataGridViewСотрудники.DataSource = списокСотрудников;
+                try
+                {
+                    var списокСотрудников = db.сотрудники.ToList();//исправь
+                    dataGridViewСотрудники.DataSource = списокСотрудников;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ошибка загрузки данных: " + ex.Message);
+                }
             }
         }
 

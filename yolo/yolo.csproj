@@ -103,6 +103,7 @@
     <Compile Include="Администраторы\материалы.Designer.cs">
       <DependentUpon>материалы.cs</DependentUpon>
     </Compile>
+    <Compile Include="БД\сотрудники.cs" />
     <Compile Include="клиенты\каталог.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -9,6 +9,7 @@ namespace yolo
         public DbSet<Материалы> Материалы { get; set; }
         public DbSet<Каталог> Каталог { get; set; }
         public DbSet<Корзина> Корзина { get; set; }
+        public DbSet<сотрудники> сотрудники { get; set; }
         public DbHelper() : base("DefaultConnection") { }
     }
 }

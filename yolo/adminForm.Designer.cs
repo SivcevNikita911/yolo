@@ -83,6 +83,7 @@
             this.adminПерехходКсотрудникам.TabIndex = 3;
             this.adminПерехходКсотрудникам.Text = "Сотрудники";
             this.adminПерехходКсотрудникам.UseVisualStyleBackColor = true;
+            this.adminПерехходКсотрудникам.Click += new System.EventHandler(this.adminПерехходКсотрудникам_Click);
             // 
             // adminПерехходКматериалам
             // 
