@@ -59,6 +59,9 @@
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -94,6 +97,7 @@
       <DependentUpon>adminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="БД\DbHelper.cs" />
+    <Compile Include="БД\Заказы.cs" />
     <Compile Include="БД\каталог.cs" />
     <Compile Include="БД\корзина.cs" />
     <Compile Include="БД\материалы.cs" />
@@ -104,7 +108,13 @@
       <DependentUpon>материалы.cs</DependentUpon>
     </Compile>
     <Compile Include="БД\сотрудники.cs" />
-    <Compile Include="Должности.cs" />
+    <Compile Include="БД\Должности.cs" />
+    <Compile Include="клиенты\ЗаказыForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="клиенты\ЗаказыForm.Designer.cs">
+      <DependentUpon>ЗаказыForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="клиенты\каталог.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,10 +174,10 @@
     <Compile Include="клиенты\создание аккаунта.Designer.cs">
       <DependentUpon>создание аккаунта.cs</DependentUpon>
     </Compile>
-    <Compile Include="Сотрудники.cs">
+    <Compile Include="Администраторы\Сотрудники.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Сотрудники.Designer.cs">
+    <Compile Include="Администраторы\Сотрудники.Designer.cs">
       <DependentUpon>Сотрудники.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="adminForm.resx">
@@ -178,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Администраторы\материалы.resx">
       <DependentUpon>материалы.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="клиенты\ЗаказыForm.resx">
+      <DependentUpon>ЗаказыForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="клиенты\каталог.resx">
       <DependentUpon>каталог.cs</DependentUpon>
@@ -212,7 +225,7 @@
     <EmbeddedResource Include="клиенты\создание аккаунта.resx">
       <DependentUpon>создание аккаунта.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Сотрудники.resx">
+    <EmbeddedResource Include="Администраторы\Сотрудники.resx">
       <DependentUpon>Сотрудники.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="БД\bdIgrushki.db" />

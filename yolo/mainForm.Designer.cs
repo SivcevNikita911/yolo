@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.заказыКлиента = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();

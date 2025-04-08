@@ -105,9 +105,9 @@ namespace yolo
         private void ПроверкаЗаполненностиПолей()
         {
             добавитьСотрудника.Enabled = !string.IsNullOrWhiteSpace(inputФИО.Text) &&
-                                         comboBoxДолжности.SelectedIndex != -1 &&
-                                         !string.IsNullOrWhiteSpace(inputТелефон.Text) &&
-                                         !string.IsNullOrWhiteSpace(inputЗарплата.Text);
+            comboBoxДолжности.SelectedIndex != -1 &&
+            !string.IsNullOrWhiteSpace(inputТелефон.Text) &&
+            !string.IsNullOrWhiteSpace(inputЗарплата.Text);
         }
     }
 }

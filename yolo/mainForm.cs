@@ -77,7 +77,7 @@ namespace yolo
 
         private void заказыКлиента_Click(object sender, EventArgs e)
         {
-            
+            Helper.загрузкаФормыВправо(this, new ЗаказыForm(), splitContainer1);
         }
     }
 }

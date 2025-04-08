@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -18,11 +19,18 @@ namespace yolo
             ОчиститьТекущиеДанные();
             using (var db = new DbHelper())
             {
-                var Каталог = db.Каталог.ToList();
-                ПривязатьДанныеКDataGridView(Каталог);
-                ДобавитьСтолбцы();
-                СинхронизироватьСКорзиной(db, Каталог);
-                dataGridViewКаталог.Columns["id"].Visible = false;
+                try
+                {
+                    var Каталог = db.Каталог.ToList();
+                    ПривязатьДанныеКDataGridView(Каталог);
+                    ДобавитьСтолбцы();
+                    СинхронизироватьСКорзиной(db, Каталог);
+                    dataGridViewКаталог.Columns["id"].Visible = false;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при загрузке каталога: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -91,12 +99,10 @@ namespace yolo
                     if (dataGridViewКаталог.Columns[e.ColumnIndex].Name == "+количество_в_корзине")
                     {
                         ОбработатьКнопкуПлюс(db, e.RowIndex, товарId);
-                        MessageBox.Show("товар добавлен");
                     }
                     else if (dataGridViewКаталог.Columns[e.ColumnIndex].Name == "-количество_в_корзине")
                     {
                         ОбработатьКнопкуМинус(db, e.RowIndex, товарId);
-                        MessageBox.Show("товар убран");
                     }
                 }
             }
