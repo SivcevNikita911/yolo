@@ -109,6 +109,12 @@
     </Compile>
     <Compile Include="БД\сотрудники.cs" />
     <Compile Include="БД\Должности.cs" />
+    <Compile Include="ЗаказыAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ЗаказыAdmin.Designer.cs">
+      <DependentUpon>ЗаказыAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="клиенты\ЗаказыForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,7 +146,7 @@
     <Compile Include="Прочее\авторизация.Designer.cs">
       <DependentUpon>авторизация.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Прочее\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="БД\Администраторы.cs" />
     <Compile Include="Администраторы\входВпрофельАдминистратора.cs">
@@ -189,6 +195,9 @@
     <EmbeddedResource Include="Администраторы\материалы.resx">
       <DependentUpon>материалы.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ЗаказыAdmin.resx">
+      <DependentUpon>ЗаказыAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="клиенты\ЗаказыForm.resx">
       <DependentUpon>ЗаказыForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,7 +238,7 @@
       <DependentUpon>Сотрудники.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="БД\bdIgrushki.db" />
-    <None Include="packages.config" />
+    <None Include="Прочее\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -57,8 +57,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(232)))), ((int)(((byte)(239)))));
-            this.splitContainer1.Size = new System.Drawing.Size(896, 450);
-            this.splitContainer1.SplitterDistance = 249;
+            this.splitContainer1.Size = new System.Drawing.Size(1064, 450);
+            this.splitContainer1.SplitterDistance = 295;
             this.splitContainer1.TabIndex = 0;
             // 
             // label8
@@ -115,12 +115,13 @@
             this.adminПерехходКзаказам.TabIndex = 0;
             this.adminПерехходКзаказам.Text = "Заказы";
             this.adminПерехходКзаказам.UseVisualStyleBackColor = true;
+            this.adminПерехходКзаказам.Click += new System.EventHandler(this.adminПерехходКзаказам_Click);
             // 
             // adminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 450);
+            this.ClientSize = new System.Drawing.Size(1064, 450);
             this.Controls.Add(this.splitContainer1);
             this.Name = "adminForm";
             this.Text = "adminForm";
