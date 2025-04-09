@@ -105,6 +105,7 @@
             this.adminПерехходКдоставке.TabIndex = 1;
             this.adminПерехходКдоставке.Text = "Доставка";
             this.adminПерехходКдоставке.UseVisualStyleBackColor = true;
+            this.adminПерехходКдоставке.Click += new System.EventHandler(this.adminПерехходКдоставке_Click);
             // 
             // adminПерехходКзаказам
             // 

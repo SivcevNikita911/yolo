@@ -36,5 +36,9 @@ namespace yolo
             Helper.загрузкаФормыВправо(this, new ЗаказыAdmin(), splitContainer1);
         }
 
+        private void adminПерехходКдоставке_Click(object sender, EventArgs e)
+        {
+            Helper.загрузкаФормыВправо(this, new Доставка(), splitContainer1);
+        }
     }
 }
